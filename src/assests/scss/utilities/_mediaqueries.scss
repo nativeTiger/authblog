@@ -1,0 +1,9 @@
+@media screen and (max-width: 600px) {
+  .header {
+    min-width: fit-content;
+  }
+  .nav {
+    display: grid;
+    column-gap: 5rem;
+  }
+}

@@ -1,0 +1,7 @@
+.project {
+  @include projects;
+  &__details {
+    margin-top: 2rem;
+    @include projects;
+  }
+}

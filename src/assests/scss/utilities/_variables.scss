@@ -1,0 +1,17 @@
+$header-height: 2rem;
+
+/*Colors*/
+$hue: 174;
+$sat: 63%;
+
+$first-color: hsl($hue, 80%, 49%);
+$first-color-alt: hsl($hue, $sat, 36%);
+$title-color: hsl($hue, 12%, 15%);
+$text-color: hsl($hue, 8%, 35%);
+$body-color: hsl($hue, 100%, 99%);
+$container-color: #fff;
+$header-color: #222b2a;
+$header-color-alt: #eca72c;
+
+$p-2: 2rem;
+$z-index: 1;

@@ -81,7 +81,7 @@ a {
 }
 
 .nav__logo:hover, .nav__link:hover {
-  color: #eca72c;
+  color: #22968a;
 }
 
 .nav__btn {
@@ -203,5 +203,125 @@ a {
 .page__not__found {
   margin-top: 5rem;
   text-align: center;
+}
+
+.form__card {
+  display: -ms-grid;
+  display: grid;
+  height: 100%;
+  margin-top: 3rem;
+}
+
+.form__details {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 30rem;
+}
+
+.form__details:hover {
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.form__title {
+  margin-bottom: 2rem;
+}
+
+.form__group {
+  position: relative;
+  width: 90%;
+  height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.form__group__label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 0 4px;
+  background-color: white;
+  color: #dadce0;
+  font-size: 16px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.form__group__control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #dadce0;
+  border-radius: 0.3rem;
+  padding: 0 0.8rem;
+  height: 100%;
+  width: 100%;
+  font-size: 1rem;
+  z-index: 1;
+  outline: none;
+}
+
+.form__group__control:focus {
+  border: 2px solid #22968a;
+}
+
+.form__group__control:focus + .form__group__label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
+  color: #22968a;
+}
+
+.form__group__control:not(:placeholder-shown) + .form__group__label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
+  color: #22968a;
+}
+
+.form__btn {
+  padding: 0.5rem 0.8rem;
+  background-color: #22968a;
+  border-radius: 0.3rem;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border: none;
+  font-size: 1rem;
+}
+
+.form__btn:hover {
+  background-color: #19e1cd;
+}
+
+::-webkit-input-placeholder {
+  color: transparent;
+}
+
+:-ms-input-placeholder {
+  color: transparent;
+}
+
+::-ms-input-placeholder {
+  color: transparent;
+}
+
+::placeholder {
+  color: transparent;
 }
 /*# sourceMappingURL=global.min.css.map */

@@ -1,0 +1,83 @@
+.form {
+  &__card {
+    display: grid;
+    height: 100%;
+    margin-top: 3rem;
+  }
+  &__details {
+    @include card;
+    justify-self: center;
+    align-self: center;
+    width: 30rem;
+  }
+  &__title {
+    margin-bottom: 2rem;
+  }
+  &__group {
+    position: relative;
+    width: 90%;
+    height: 3rem;
+    margin-bottom: 1rem;
+    &__label {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      padding: 0 4px;
+      background-color: white;
+      color: #dadce0;
+      font-size: 16px;
+      transition: 0.5s;
+      z-index: $z-index-1;
+    }
+
+    &__control {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 1px solid #dadce0;
+      border-radius: 0.3rem;
+      padding: 0 0.8rem;
+      height: 100%;
+      width: 100%;
+      font-size: 1rem;
+      z-index: $z-index-1;
+      outline: none;
+      &:focus {
+        border: 2px solid $first-color-alt;
+        + .form__group__label {
+          top: -7px;
+          left: 3px;
+          z-index: 10;
+          font-size: 14px;
+          font-weight: 600;
+          color: $first-color-alt;
+        }
+      }
+      &:not(:placeholder-shown) + .form__group__label {
+        top: -7px;
+        left: 3px;
+        z-index: 10;
+        font-size: 14px;
+        font-weight: 600;
+        color: $first-color-alt;
+      }
+    }
+  }
+  &__btn {
+    padding: 0.5rem 0.8rem;
+    background-color: $first-color-alt;
+    border-radius: 0.3rem;
+    color: $container-color;
+    cursor: pointer;
+    transition: 0.5s;
+    border: none;
+    font-size: 1rem;
+    &:hover {
+      background-color: $first-color;
+    }
+  }
+}
+
+::placeholder {
+  color: transparent;
+}

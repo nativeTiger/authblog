@@ -1,4 +1,4 @@
-@mixin projects {
+@mixin card {
   background-color: $container-color;
   padding: $p-2;
   border-radius: 0.5rem;
@@ -7,6 +7,10 @@
   &:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   }
+}
+
+@mixin projects {
+  @include card;
   &__title {
     font-size: 1.2rem;
     margin-bottom: 0.8rem;

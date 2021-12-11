@@ -2,7 +2,14 @@ import React from "react";
 import Input from "./input/Input";
 import SubmitInput from "./input/SubmitInput";
 
-const SignUpForm = ({ value, onChange, onSubmit }) => {
+const SignUpForm = ({
+  email,
+  password,
+  firstName,
+  lastName,
+  onChange,
+  onSubmit,
+}) => {
   return (
     <div className="form__card">
       <form className="form__details" onSubmit={onSubmit}>
@@ -11,28 +18,28 @@ const SignUpForm = ({ value, onChange, onSubmit }) => {
           label="Email"
           name="email"
           type="email"
-          value={value}
+          value={email}
           onChange={onChange}
         />
         <Input
           label="Password"
           name="password"
           type="password"
-          value={value}
+          value={password}
           onChange={onChange}
         />
         <Input
           label="LastName"
           name="lastName"
           type="text"
-          value={value}
+          value={lastName}
           onChange={onChange}
         />
         <Input
           label="FirstName"
           name="firstName"
           type="text"
-          value={value}
+          value={firstName}
           onChange={onChange}
         />
         <SubmitInput value="SignUp" />

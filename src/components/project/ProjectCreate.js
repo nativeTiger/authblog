@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import SignUpForm from "../form/SignUpForm";
-
-const SignUp = () => {
+import ProjectForm from "../form/ProjectForm";
+const ProjectCreate = () => {
   const initialStates = {
-    email: "",
-    password: "",
-    lastName: "",
-    firstName: "",
+    title: "",
+    content: "",
   };
   const [state, setState] = useState(initialStates);
   const handleChange = (e) => {
@@ -21,12 +18,11 @@ const SignUp = () => {
     console.log(state);
   };
   return (
-    <SignUpForm
+    <ProjectForm
       initialStates={initialStates}
       onChange={handleChange}
       onSubmit={handleSubmit}
     />
   );
 };
-
-export default SignUp;
+export default ProjectCreate;

@@ -9,12 +9,9 @@ const SignedInLink = () => {
         </Link>
       </li>
       <li className="nav__item">
-        <Link to="/signup" className="nav__link">
+        <Link to="/signin" className="nav__link">
           SignOut
         </Link>
-      </li>
-      <li className="nav__item">
-        <button className="nav__btn">Hel</button>
       </li>
     </ul>
   );

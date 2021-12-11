@@ -2,7 +2,7 @@ import React from "react";
 import Input from "./input/Input";
 import SubmitInput from "./input/SubmitInput";
 
-const SignInForm = ({ value, onChange, onSubmit }) => {
+const SignInForm = ({ email, password, onChange, onSubmit }) => {
   return (
     <div className="form__card">
       <form className="form__details" onSubmit={onSubmit}>
@@ -11,14 +11,14 @@ const SignInForm = ({ value, onChange, onSubmit }) => {
           label="Email"
           name="email"
           type="email"
-          value={value}
+          value={email}
           onChange={onChange}
         />
         <Input
           label="Password"
           name="password"
           type="password"
-          value={value}
+          value={password}
           onChange={onChange}
         />
         <SubmitInput value="SignIn" />

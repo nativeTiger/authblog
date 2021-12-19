@@ -3,6 +3,8 @@
   width: 100%;
   z-index: $z-index-1;
   box-shadow: 0 1px 17px hsla($hue, $sat, 15%, 0.15);
+  position: fixed;
+  top: 0;
 }
 .nav {
   height: 4rem;

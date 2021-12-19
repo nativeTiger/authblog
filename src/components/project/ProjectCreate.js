@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ProjectForm from "../form/ProjectForm";
-const ProjectCreate = () => {
+import { connect } from "react-redux";
+import { createProject } from "../../redux/project/projectActions";
+const ProjectCreate = ({ createProject }) => {
   const initialStates = {
     title: "",
     content: "",
@@ -15,7 +17,7 @@ const ProjectCreate = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(state);
+    createProject(state);
   };
   return (
     <ProjectForm
@@ -25,4 +27,9 @@ const ProjectCreate = () => {
     />
   );
 };
-export default ProjectCreate;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createProject: (project) => dispatch(createProject(project)),
+  };
+};
+export default connect(null, mapDispatchToProps)(ProjectCreate);

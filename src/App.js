@@ -14,7 +14,7 @@ function App() {
         <Route path="/" exact component={Dashboard} />
         <Route path="/signin" component={SignIn} />
         <Route path="/signup" component={SignUp} />
-        <Route path="/project/:slug" component={ProjectDetails} />
+        <Route path="/project/:id" component={ProjectDetails} />
         <Route path="/create" component={ProjectCreate} />
         <Route component={PageNotFound} />
       </Switch>

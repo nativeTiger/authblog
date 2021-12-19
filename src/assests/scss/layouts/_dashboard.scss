@@ -1,13 +1,15 @@
-.home {
-  margin: 2rem 0;
-  &__content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 5rem;
-  }
-  &__projectlist {
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 2rem;
+.main {
+  margin-top: 7rem;
+  .home {
+    &__content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 5rem;
+    }
+    &__projectlist {
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 2rem;
+    }
   }
 }

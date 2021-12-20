@@ -41,6 +41,18 @@ ul {
 
 a {
   text-decoration: none;
+  cursor: pointer;
+}
+
+.error {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1rem;
+  color: red;
 }
 
 .header {
@@ -204,7 +216,8 @@ a {
 }
 
 .page__not__found,
-.loading__project {
+.loading__project,
+.loading {
   margin-top: 5rem;
   text-align: center;
 }

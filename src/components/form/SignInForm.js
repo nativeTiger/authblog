@@ -2,7 +2,7 @@ import React from "react";
 import Input from "./input/Input";
 import SubmitInput from "./input/SubmitInput";
 
-const SignInForm = ({ email, password, onChange, onSubmit }) => {
+const SignInForm = ({ email, password, onChange, onSubmit, authError }) => {
   return (
     <div className="form__card">
       <form className="form__details" onSubmit={onSubmit}>
@@ -22,6 +22,7 @@ const SignInForm = ({ email, password, onChange, onSubmit }) => {
           onChange={onChange}
         />
         <SubmitInput value="SignIn" />
+        {authError ? <p className="error">{authError}</p> : null}
       </form>
     </div>
   );

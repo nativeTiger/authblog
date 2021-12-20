@@ -8,18 +8,27 @@ import store from "./redux/store";
 import { ReactReduxFirebaseProvider } from "react-redux-firebase";
 import { createFirestoreInstance } from "redux-firestore";
 import firebase from "../src/config/firebaseConfig";
-
+import { useSelector } from "react-redux";
+import { isLoaded } from "react-redux-firebase";
+function AuthIsLoaded({ children }) {
+  const auth = useSelector((state) => state.firebase.auth);
+  if (!isLoaded(auth)) return <h1 className="loading">Loading....</h1>;
+  return children;
+}
 const rrfProps = {
   firebase,
   config: {},
   dispatch: store.dispatch,
   createFirestoreInstance,
 };
+
 ReactDOM.render(
   <Provider store={store}>
     <Router>
       <ReactReduxFirebaseProvider {...rrfProps}>
-        <App />
+        <AuthIsLoaded>
+          <App />
+        </AuthIsLoaded>
       </ReactReduxFirebaseProvider>
     </Router>
   </Provider>,

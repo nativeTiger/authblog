@@ -3,6 +3,7 @@ import { compose } from "redux";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { firestoreConnect } from "react-redux-firebase";
+import moment from "moment";
 const ProjectDetails = ({ project }) => {
   if (project) {
     const { authorFirstName, authorLastName, content, title, createdAt } =
@@ -15,7 +16,7 @@ const ProjectDetails = ({ project }) => {
           Posted by {authorFirstName} {authorLastName}
         </p>
         <p className="project__date" key={createdAt.seconds}>
-          {createdAt.seconds}
+          {moment(createdAt.toDate().toString()).calendar()}
         </p>
         <Link to="/">
           <span className="project__button">Go Back</span>

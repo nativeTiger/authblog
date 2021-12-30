@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import SignUpForm from "../form/SignUpForm";
-
-const SignUp = () => {
+import { connect } from "react-redux";
+import { signUp } from "../../redux/auth/authActions";
+const SignUp = ({ signUp }) => {
   const initialStates = {
     email: "",
     password: "",
@@ -18,8 +19,9 @@ const SignUp = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(state);
+    signUp(state);
   };
+
   return (
     <SignUpForm
       initialStates={initialStates}
@@ -29,4 +31,10 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signUp: (user) => dispatch(signUp(user)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(SignUp);

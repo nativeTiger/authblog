@@ -3,6 +3,8 @@ import {
   SIGNIN_SUCCESS,
   SIGNOUT_FAILURE,
   SIGNOUT_SUCCESS,
+  SIGNUP_FAILURE,
+  SIGNUP_SUCCESS,
 } from "./authTypes";
 import { initialStates } from "../initialStates";
 const authReducers = (state = initialStates.authError, action) => {
@@ -30,6 +32,18 @@ const authReducers = (state = initialStates.authError, action) => {
       return {
         ...state,
         authError: "Signout failure",
+      };
+    case SIGNUP_SUCCESS:
+      console.log("signup success");
+      return {
+        ...state,
+        authError: [],
+      };
+    case SIGNUP_FAILURE:
+      console.log("signup failure");
+      return {
+        ...state,
+        authError: action.err.message,
       };
     default:
       return state;

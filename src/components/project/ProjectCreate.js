@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import ProjectForm from "../form/ProjectForm";
 import { connect } from "react-redux";
 import { createProject } from "../../redux/project/projectActions";
-const ProjectCreate = ({ createProject }) => {
+import { Redirect } from "react-router-dom";
+const ProjectCreate = ({ auth, createProject, history }) => {
   const initialStates = {
     title: "",
     content: "",
@@ -18,7 +19,10 @@ const ProjectCreate = ({ createProject }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     createProject(state);
+    history.push("/");
   };
+
+  if (!auth.uid) return <Redirect to="/signin" />;
   return (
     <ProjectForm
       initialStates={initialStates}
@@ -27,9 +31,14 @@ const ProjectCreate = ({ createProject }) => {
     />
   );
 };
+const mapStatesToProps = (state) => {
+  return {
+    auth: state.firebase.auth,
+  };
+};
 const mapDispatchToProps = (dispatch) => {
   return {
     createProject: (project) => dispatch(createProject(project)),
   };
 };
-export default connect(null, mapDispatchToProps)(ProjectCreate);
+export default connect(mapStatesToProps, mapDispatchToProps)(ProjectCreate);

@@ -42,13 +42,16 @@ const signUpFailure = (err) => {
     err,
   };
 };
-export const signIn = (users) => {
+export const signIn = (users, { history }) => {
   return (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase();
     firebase
       .auth()
       .signInWithEmailAndPassword(users.email, users.password)
-      .then(() => dispatch(signInSuccess()))
+      .then(() => {
+        dispatch(signInSuccess());
+        history.push("/");
+      })
       .catch(() => dispatch(signInFailure()));
   };
 };
@@ -64,7 +67,7 @@ export const signOut = () => {
   };
 };
 
-export const signUp = (user) => {
+export const signUp = (user, { history }) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firebase = getFirebase();
     const firestore = getFirestore();
@@ -81,7 +84,10 @@ export const signUp = (user) => {
             initials: `${user.firstName[0]} ${user.lastName[0]}`,
           });
       })
-      .then(() => dispatch(signUpSuccess()))
+      .then(() => {
+        dispatch(signUpSuccess());
+        history.push("/");
+      })
       .catch((err) => dispatch(signUpFailure(err)));
   };
 };

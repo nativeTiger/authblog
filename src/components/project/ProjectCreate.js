@@ -3,7 +3,7 @@ import ProjectForm from "../form/ProjectForm";
 import { connect } from "react-redux";
 import { createProject } from "../../redux/project/projectActions";
 import { Redirect } from "react-router-dom";
-const ProjectCreate = ({ auth, createProject, history }) => {
+const ProjectCreate = ({ auth, createProject, history, ...props }) => {
   const initialStates = {
     title: "",
     content: "",
@@ -16,6 +16,7 @@ const ProjectCreate = ({ auth, createProject, history }) => {
       [name]: value,
     }));
   };
+  console.log(props);
   const handleSubmit = (e) => {
     e.preventDefault();
     createProject(state);

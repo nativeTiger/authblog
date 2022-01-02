@@ -31,9 +31,9 @@ const SignUp = ({ signUp }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    signUp: (user) => dispatch(signUp(user)),
+    signUp: (user) => dispatch(signUp(user, ownProps)),
   };
 };
 

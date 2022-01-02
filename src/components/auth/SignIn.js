@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SignInForm from "../form/SignInForm";
 import { connect } from "react-redux";
 import { signIn } from "../../redux/auth/authActions";
-const SignIn = ({ signIn, authError }) => {
+const SignIn = ({ signIn, authError, history }) => {
   const initialStates = {
     email: "",
     password: "",
@@ -33,9 +33,9 @@ const mapStatesToProps = (state) => {
     authError: state.auth.authError,
   };
 };
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    signIn: (users) => dispatch(signIn(users)),
+    signIn: (users) => dispatch(signIn(users, ownProps)),
   };
 };
 export default connect(mapStatesToProps, mapDispatchToProps)(SignIn);

@@ -20,7 +20,6 @@ const Navbar = ({ auth }) => {
   );
 };
 const mapStatesToProps = (state) => {
-  console.log(state);
   return {
     auth: state.firebase.auth,
   };

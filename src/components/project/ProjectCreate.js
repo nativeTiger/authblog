@@ -16,7 +16,6 @@ const ProjectCreate = ({ auth, createProject, history, ...props }) => {
       [name]: value,
     }));
   };
-  console.log(props);
   const handleSubmit = (e) => {
     e.preventDefault();
     createProject(state);
